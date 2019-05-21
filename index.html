@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
  <header>
-    <h3>Choose the Location to discus</h3>
+ <h3 >Otieno PhD Research  2019</h3>
+    <h3>Choose the Location to discuss</h5>
   </header>
-<body>
-<div id="googleMap" style="width:80%;height:500px;"></div>
+<body background="intro-bg.jpg">
+<div id="googleMap" style="width:60%;height:400px;"></div>
+ 
 
 <script>
 function myMap() {
@@ -15,9 +17,10 @@ var mapProp= {
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 google.maps.event.addListener(map, 'click', function(event) {
-alert(event.latLng.lat() + ", " + event.latLng.lng());
+
 document.getElementById('txtLat').value=event.latLng.lat();
 document.getElementById('txtLng').value=event.latLng.lng();
+
  marker = new google.maps.Marker({position: event.latLng, map: map,
  title: 'My preferred location!',
  draggable: false
@@ -30,14 +33,69 @@ document.getElementById('txtLng').value=event.latLng.lng();
 
 }
 
+
+
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJJnkoJ1iBJe2ql-BsEzm-S8hipNVYMgQ&callback=myMap"></script>
+
+
 </body>
 </head>
 
         <table cellpadding="0" cellspacing="0">
             <tr><td colspan=3><div id="map_canvas" style="background-color: #ffffff"></div></td></tr>
             <tr><td><input type="text" id="txtLat" name="txtLat"style="width:150px"></td>
-                <td><input type="text" id="txtLng" name="txtLng"style="width:150px"></td></tr>
+                <td><input type="text" id="txtLng" name="txtLng"style="width:150px"></td>
+				<td><input type="text" value="" id="output"style="width:200px"></td>
+				<td><button onclick="myFunction()">Copy</td></tr>
         </table></form>
+		</section>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-ribbon" style="right: 0">
+                <h3 class="title" style="margin: 0;padding: 5px 10px">Thank <span>You</span></h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="logo" href="index.html">
+                       
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <p> <font color="white">Emmanuel Okello Otieno EPM Kenyatta University (Kenya).</font></p>
+                </div>
+                <div class="col-md-5">
+                    <nav id="footer-menu">
+                        <ul>
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+		
+	<script>
+
+ function myFunction() {
+ var copyText = document.getElementById("txtLat" );
+ var copyText1 = document.getElementById("txtLng" );
+ output.value = copyText.value + "," + copyText1.value ;
+      output.select();
+      document.execCommand("copy");
+
+    }
+
+</script>
 </html>
